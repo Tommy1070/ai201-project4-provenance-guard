@@ -1,0 +1,123 @@
+[
+  {
+    "event_type": "classification",
+    "content_id": "fe0bf256-3d67-4d60-b3e8-33b3f76a41c8",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:20:45.423292+00:00",
+    "text_preview": "I went to the beach yesterday and watched the sunset.",
+    "attribution": "uncertain",
+    "confidence": 0.5,
+    "llm_score": 0.5,
+    "stylometric_score": null,
+    "llm_reasoning": "Groq detection placeholder for Milestone 3.",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "41a5c494-0fb2-456a-b15c-d7c4c84efd93",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:22:37.248997+00:00",
+    "text_preview": "Artificial intelligence represents a transformative paradigm shift in modern society. It is important to consider the et",
+    "attribution": "uncertain",
+    "confidence": 0.5,
+    "llm_score": 0.5,
+    "stylometric_score": null,
+    "llm_reasoning": "Groq detection placeholder for Milestone 3.",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "4f0463b6-8096-4fe9-856a-450074e635f2",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:31:30.399893+00:00",
+    "text_preview": "I wrote this story myself while sitting at a coffee shop yesterday. It was inspired by my trip to Austin and my conversa",
+    "attribution": "likely_human",
+    "confidence": 0.12,
+    "llm_score": 0.12,
+    "stylometric_score": null,
+    "llm_reasoning": "text includes personal experiences and specific details",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "e64db8fe-f973-472d-bfd5-1e71a5171670",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:42:13.320819+00:00",
+    "text_preview": "Artificial intelligence represents a transformative paradigm shift in modern society. It is important to consider ethica",
+    "attribution": "likely_ai",
+    "confidence": 0.71,
+    "llm_score": 0.85,
+    "stylometric_score": 0.45,
+    "stylometric_metrics": {
+      "sentence_length_variance": 2.25,
+      "type_token_ratio": 1.0,
+      "punctuation_density": 0.026,
+      "repetition_rate": 0.0
+    },
+    "llm_reasoning": "The text features overly formal and generic language, lacking personal touch and specific examples, which is characteristic of AI-generated content.",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "ce65373d-8231-42cb-b63b-efc218eb5135",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:48:36.480114+00:00",
+    "text_preview": "Artificial intelligence represents a transformative paradigm shift in modern society. It is important to consider ethica",
+    "attribution": "likely_ai",
+    "confidence": 0.71,
+    "llm_score": 0.85,
+    "stylometric_score": 0.45,
+    "stylometric_metrics": {
+      "sentence_length_variance": 2.25,
+      "type_token_ratio": 1.0,
+      "punctuation_density": 0.026,
+      "repetition_rate": 0.0
+    },
+    "llm_reasoning": "The text features overly formal and generic language, lacking personal tone and specific examples, which is characteristic of AI-generated content.",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "2f19ddcb-7974-4cba-b1e8-44c53f75e846",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T22:56:55.324256+00:00",
+    "text_preview": "This is my final Project 4 test submission.",
+    "attribution": "likely_human",
+    "confidence": 0.29,
+    "llm_score": 0.21,
+    "stylometric_score": 0.45,
+    "stylometric_metrics": {
+      "sentence_length_variance": 0.0,
+      "type_token_ratio": 1.0,
+      "punctuation_density": 0.023,
+      "repetition_rate": 0.0
+    },
+    "llm_reasoning": "text is short and informal, with a personal touch",
+    "status": "classified"
+  },
+  {
+    "event_type": "classification",
+    "content_id": "8b49b650-ecba-4b40-bee8-87112703308e",
+    "creator_id": "tom",
+    "timestamp": "2026-06-29T23:24:46.733935+00:00",
+    "text_preview": "This is my final Project 4 test submission.",
+    "attribution": "likely_human",
+    "confidence": 0.29,
+    "llm_score": 0.21,
+    "stylometric_score": 0.45,
+    "stylometric_metrics": {
+      "sentence_length_variance": 0.0,
+      "type_token_ratio": 1.0,
+      "punctuation_density": 0.023,
+      "repetition_rate": 0.0
+    },
+    "llm_reasoning": "text is brief and informal, with a personal pronoun, indicating a human author",
+    "status": "under_review"
+  },
+  {
+    "event_type": "appeal",
+    "content_id": "8b49b650-ecba-4b40-bee8-87112703308e",
+    "creator_reasoning": "I wrote this content myself and would like it reviewed.",
+    "status": "under_review"
+  }
+]
