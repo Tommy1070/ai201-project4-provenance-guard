@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify
 from datetime import datetime, timezone
 import uuid
 
-from detector import classify_with_groq
+from detector import classify_with_groq, analyze_stylometrics
+from scoring import combine_scores, get_attribution
 from audit import write_log, get_recent_logs
 
 app = Flask(__name__)
@@ -28,12 +29,22 @@ def submit():
     creator_id = data["creator_id"]
     content_id = str(uuid.uuid4())
 
+    # Signal 1: Groq LLM classification
     groq_result = classify_with_groq(text)
 
-    attribution = groq_result["label"]
-    confidence = groq_result["score"]
+    # Signal 2: Stylometric heuristic analysis
+    stylometric_result = analyze_stylometrics(text)
 
-    label = "Temporary label for Milestone 3. Full transparency labels will be added in Milestone 5."
+    llm_score = groq_result["score"]
+    stylometric_score = stylometric_result["score"]
+
+    # Combine both signals into one final confidence score
+    confidence = combine_scores(llm_score, stylometric_score)
+
+    # Convert the confidence score into likely_ai, likely_human, or uncertain
+    attribution = get_attribution(confidence)
+
+    label = "Temporary label for Milestone 4. Full transparency labels will be added in Milestone 5."
 
     log_entry = {
         "event_type": "classification",
@@ -43,8 +54,9 @@ def submit():
         "text_preview": text[:120],
         "attribution": attribution,
         "confidence": confidence,
-        "llm_score": confidence,
-        "stylometric_score": None,
+        "llm_score": llm_score,
+        "stylometric_score": stylometric_score,
+        "stylometric_metrics": stylometric_result["metrics"],
         "llm_reasoning": groq_result["reasoning"],
         "status": "classified"
     }
@@ -58,8 +70,9 @@ def submit():
         "confidence": confidence,
         "label": label,
         "signals": {
-            "llm_score": confidence,
-            "stylometric_score": None
+            "llm_score": llm_score,
+            "stylometric_score": stylometric_score,
+            "stylometric_metrics": stylometric_result["metrics"]
         },
         "reasoning": groq_result["reasoning"],
         "status": "classified"
